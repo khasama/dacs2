@@ -336,6 +336,18 @@
             return $pre->fetchAll();
         }
     #
+    # thương hiệu func
+        // lấy sản phẩm bán chạy có idLoai 
+        function all_brand(){
+            require "ConDB.php";
+            $sql = "
+                SELECT * FROM tb_thuonghieu
+            ";
+            $pre = $conn->prepare($sql);
+            $pre->execute();
+            return $pre->fetchAll();
+        }
+    #
 
     #tìm loại fun
         // lấy sản phẩm bán chạy có idLoai 

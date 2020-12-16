@@ -129,6 +129,9 @@
                         // điều hướng quản lý slide
                         case "show-slide" : require "pages/slide/show_slide.php"; break;
 
+                        // điều hướng quản lý thương hiệu
+                        case "show-brand" : require "pages/thuonghieu/show_brand.php"; break;
+
                         default : require "pages/dashboard.php";
                     }
                 ?>

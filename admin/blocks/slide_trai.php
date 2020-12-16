@@ -71,6 +71,7 @@
                 <a class="collapse-item" href="./?p=show-order">Đơn hàng</a>
                 <a class="collapse-item" href="./?p=show-magiamgia">Mã giảm giá</a>
                 <a class="collapse-item" href="./?p=show-slide">Slide</a>
+                <a class="collapse-item" href="./?p=show-brand">Thương hiệu</a>
             </div>
         </div>
     </li>
