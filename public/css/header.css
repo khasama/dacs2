@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #000; 
+}
+.frame{
+    width: 1200px;
+    margin: 0 auto;
+}
+.wrapper .header #top-head{
+    height: 25px;
+    background-color: #333;
+    color: #fff ;
+    padding: 0 5px;
+    font-size: 13px;
+    line-height: 25px;
+}
+.wrapper .header #top-head #contact #dn-dk{
+    float: right;
+}
+.wrapper .header #top-head #contact #dn-dk a{
+    color: #fff;
+}
+.wrapper .header #top-head #contact #dn-dk a:hover{
+    color: yellow;
+    text-decoration: none;
+}
+.wrapper .header #mid-head{
+    background-color: #fff;
+    padding: 5px 0;
+    height: 70px;
+}
+.wrapper .header #mid-head #logo{
+    text-align: center;
+}
+.wrapper .header #mid-head #logo a img{
+    height: 60px;
+    width: auto;
+}
+.nav-link{
+    color: #fff !important;
+}
+.nav-link:hover{
+    color: aqua !important;
+}
+.navbar-nav{
+    background-color: #5a5454;
+}
+.navbar-nav .nav-item{
+    margin-right: 5%;
+}
+.navbar-nav .nav-item:hover{
+    color: aqua;
+}
+.row{
+    margin: 0;
+}
+.wrapper .header #bot-head{
+    background: #7F7FD5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff ;
+    font-size: 15px;
+    line-height: 25px;
+}
+.wrapper .header #bot-head #action {
+    padding: 5px 0;
+    position: relative;
+}
+.wrapper .header #bot-head #action #search{
+    display: flex;
+}
+.wrapper .header #bot-head #action #search #form{
+    width: 100%;
+}
+.wrapper .header #bot-head #action #search #cart{
+    font-size: 25px;
+    color: #fff;
+    margin: 3px 7px 0 7px;
+}
+.wrapper .header #bot-head #action #search #cart span{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 12px;
+}
+.wrapper .header #bot-head #action #search, #form, #menu{
+    height: 35px;
+    padding-left: 0;
+}
+.wrapper .header #bot-head #action #search input{
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+    border: none;
+    padding-left: 8px;
+    outline: none;
+}
+.wrapper .header #bot-head #action #search button{
+    position: absolute;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    margin-left: -34px;
+    margin-top: 2px;
+    background: none;
+    outline: none;
+}
+.navbar-nav li:hover > .sub-menu{
+    display: block;
+}
+    /* sub-menu */
+    .sub-menu{
+        display: none;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.8);
+        margin: 0 0 0 15px;
+        padding: 0;
+        list-style: none;
+        z-index: 99999999;
+        left: 0;
+        max-width: 122%;
+    }
+    .sub-menu .sub-menu-item{
+        float: left;
+        width: 180px;
+        font-size: 15px;
+        padding: 5px 15px;
+    }
+    .sub-menu .sub-menu-item:hover{
+        background-color: #000;
+        position: relative;
+    }
+    .sub-menu .sub-menu-item:hover > .sub-menu-2{
+        display: block;
+    }
+        /* sub-menu-2 */
+        .sub-menu-2{
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 0;
+            list-style: none;
+            z-index: 99999999;
+            left: 0;
+            
+        }
+        .sub-menu-2 li{
+            max-width: 200px;
+            font-size: 15px;
+            
+        }
+        .sub-menu-2 li:hover{
+            background-color: #000;
+        }
+        .sub-menu-2 li a{
+            color: #fff;
+            display: block;
+            padding: 10px 42px;
+        }
+        .sub-menu-2 li a:hover{
+            text-decoration: none;
+            color: #00ffff;
+        }
+        /* sub-menu-2 */
+    /* sub-menu */

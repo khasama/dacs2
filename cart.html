@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/footer.css">
+    <title>Document</title>
+    <style>
+        
+        
+    </style>
+    <link rel="stylesheet" href="public/css/rps.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <!-- trên -->
+            <div id="top-head">
+                <div class="frame" id="contact">
+                    <span id="email">
+                        Email: hahaha@gmail.com
+                    </span>
+                    <div id="dn-dk">
+                        <a href="">Đăng nhập</a>
+                        |
+                        <a href="">Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+            <!-- giữa -->
+            <div id="mid-head">
+                <div class="frame" id="logo">
+                    <a href="" >
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Supreme_Logo.svg/800px-Supreme_Logo.svg.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- dưới -->
+            <div id="bot-head">
+                <div class="frame" id="action">
+                    <div class="row">
+                        <div id="menu" class="col-3 col-sm-8 col-md-8 col-lg-7 col-xl-7">
+                            <nav class="navbar navbar-expand-sm navbar-dark" style="height: 100%;padding: 0;">
+                                <!-- Toggler/collapsibe Button -->
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" id="btn" data-target="#collapsibleNavbar" style="margin: 0 auto;">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                
+                                <!-- Navbar links -->
+                                <div class="collapse navbar-collapse" id="collapsibleNavbar" style="text-align: center;z-index: 99999;">
+                                    <ul class="navbar-nav" style="width: 100%;">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">TRANG CHỦ</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">SẢN PHẨM</a>
+                                            <ul class="sub-menu">
+                                                <li class="sub-menu-item">
+                                                    <a class="nav-link" href="#">Trang Phục Nam</a>
+                                                    <ul class="sub-menu-2">
+                                                        <li><a href="">Áo khoác nam</a></li>
+                                                        <li><a href="">Áo khoác nam</a></li>
+                                                        <li><a href="">Áo khoác nam</a></li>
+                                                        <li><a href="">Áo khoác nam</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sub-menu-item">
+                                                    <a class="nav-link" href="#">Trang Phục Nữ</a>
+                                                    <ul class="sub-menu-2">
+                                                        <li><a href="">Áo khoác nữ</a></li>
+                                                        <li><a href="">Áo khoác nữ</a></li>
+                                                        <li><a href="">Áo khoác nữ</a></li>
+                                                        <li><a href="">Áo khoác nữ</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sub-menu-item">
+                                                    <a class="nav-link" href="#">Phụ Kiện</a>
+                                                    <ul class="sub-menu-2">
+                                                        <li><a href="">Áo khoác nam</a></li>
+                                                        <li><a href="">Áo khoác nam</a></li>
+                                                        <li><a href="">Áo khoác nam</a></li>
+                                                        <li><a href="">Áo khoác nam</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">GIỚI THIỆU</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">LIÊN HỆ</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style="padding: 0;"></div>
+                        <div id="search" class="col-8 col-sm-3 col-md-3 col-lg-4 col-xl-4">
+                            <form action="" method="get" id="form">
+                                <input type="hidden" name="p" value="tim-kiem">
+                                <input type="text" name="q" id="tk" placeholder="Tìm kiếm:">
+                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+                            <a href="" id="cart">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <span class="badge badge-danger">4</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+
+        <!-- content -->
+        <div class="content">
+            <div class="frame" id="gio-hang">
+                <h3 id="tt-gh">Giỏ hàng của bạn</h3>
+                <form action="" method="post">
+                    <table>
+                        <tr>
+                            <th class="ten-sp">Sản phẩm</th>
+                            <th >Đơn giá</th>
+                            <th class="sl-sp">Số lượng</th>
+                            <th >Thành tiền</th>
+                            <th><i class="fa fa-cog" aria-hidden="true"></i></th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td class="ten-sp">
+                                    <img src="public/img/product/a1.png" alt="" width="100px" style="float: left;margin-right: 7px;">
+                                    ÁO KHOÁC NAM NỈ NGOẠI LÓT LÔNG GIỮ NHIỆT BAO ĐẸP SIÊU ẤM MÙA ĐÔNG
+                                </td>
+                                <td class="gia-sp">
+                                    166.666.000 ₫
+                                </td>
+                                <td class="sl-sp">
+                                    <input type="number" value="2">
+                                </td>
+                                <td class="thanh-tien">
+                                    166.666.000 ₫
+                                </td>
+                                <td class="dlt-sp">
+                                    <a href="">Xóa</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ten-sp">
+                                    <img src="public/img/product/a1.png" alt="" width="100px" style="float: left;margin-right: 7px;">
+                                    ÁO KHOÁC NAM NỈ NGOẠI LÓT LÔNG GIỮ NHIỆT BAO ĐẸP SIÊU ẤM MÙA ĐÔNG
+                                </td>
+                                <td class="gia-sp">
+                                    166.666.000 ₫
+                                </td>
+                                <td class="sl-sp">
+                                    <input type="number" value="2">
+                                </td>
+                                <td class="thanh-tien">
+                                    166.666.000 ₫
+                                </td>
+                                <td class="dlt-sp">
+                                    <a href="">Xóa</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ten-sp">
+                                    <img src="public/img/product/a1.png" alt="" width="100px" style="float: left;margin-right: 7px;">
+                                    ÁO KHOÁC NAM NỈ NGOẠI LÓT LÔNG GIỮ NHIỆT BAO ĐẸP SIÊU ẤM MÙA ĐÔNG
+                                </td>
+                                <td class="gia-sp">
+                                    166.666.000 ₫
+                                </td>
+                                <td class="sl-sp">
+                                    <input type="number" value="2">
+                                </td>
+                                <td class="thanh-tien">
+                                    166.666.000 ₫
+                                </td>
+                                <td class="dlt-sp">
+                                    <a href="">Xóa</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="submit" id="update-sp">Cập nhật giỏ hàng</button>
+                </form>
+
+                <div id="pay">
+                    <div id="ma-giam-gia">
+                        <label for="mgg">Mã giảm giá: </label>
+                        <input type="text" name="mgg" placeholder="Nhập mã(nếu có)">
+                        <a href="javascript:void(0)">Kiểm tra</a>
+                    </div>
+                    <div id="thanh-toan">
+                        <h4>Tổng tiền: 999.999</h4>
+                        <a href="javascript:void(0)" onclick="document.getElementById('id01').style.display='block'">Xác nhận</a>
+                    </div>
+                </div>
+                <div id="id01" class="modal">
+                    <form class="modal-content animate" action="/action_page.php" method="post">
+                        <div class="form-thanh-toan">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <h4>Thông tin thanh toán</h4>
+                            <label for="uname">Tên Khách Hàng: </label>
+                            <input type="text" placeholder="Enter Username" name="uname" > <br>
+                            <label for="uname">Tên Khách Hàng: </label>
+                            <input type="text" placeholder="Enter Username" name="uname" > <br>
+                            <label for="uname">Tên Khách Hàng: </label>
+                            <input type="text" placeholder="Enter Username" name="uname" > <br>
+                            <label for="uname">Tên Khách Hàng: </label>
+                            <input type="text" placeholder="Enter Username" name="uname" > <br>
+                            <label for="uname">Tên Khách Hàng: </label>
+                            <input type="text" placeholder="Enter Username" name="uname" > <br>
+                            <label for="uname">Tên Khách Hàng: </label>
+                            <input type="text" placeholder="Enter Username" name="uname" > <br>
+                            <h5>Tổng tiền bạn phải thanh toán: 999.999</h5>
+                            <button type="submit" name="dat-hang">Xác nhận thanh toán</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+        <!-- end content -->
+
+        <!-- footer -->
+        <div class="footer">
+            <div class="frame" id="footer-item">
+                <div class="row">
+                    <div class="col-lg-4 col-xl-4" id="left-footer">
+                        <h5>Về Chúng Tôi</h5>
+                        <ul class="f-i">
+                            <li><a href="">abv</a></li>
+                            <li><a href="">xyz</a></li>
+                            <li><a href="">def</a></li>
+                            <li><a href="">qwer</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-xl-4" id="footer-logo">
+                        <a href="">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Supreme_Logo.svg/800px-Supreme_Logo.svg.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-xl-4" id="right-footer">
+                        <h5>Về Chúng Tôi</h5>
+                        <ul class="f-i">
+                            <li><a href="">abv</a></li>
+                            <li><a href="">xyz</a></li>
+                            <li><a href="">def</a></li>
+                            <li><a href="">qwer</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end footer -->
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

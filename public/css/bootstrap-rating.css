@@ -1,0 +1,16 @@
+.fa-star {
+  display: inline-block;
+  border-radius: 50%;
+  height: 30px;
+  color: #fff;
+  font-size: 17px;
+}
+
+.fa-star-empty {
+  color: #ccc;
+}
+
+.fa-star-filled {
+  color: #e98f07;
+}
+
