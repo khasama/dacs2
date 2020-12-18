@@ -79,18 +79,18 @@
             <div class="form-thanh-toan">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <h4>Thông tin thanh toán</h4>
-                <label for="tenkh">Tên khách hàng(người nhận): </label>
+                <label for="tenkh">Họ và tên khách hàng(*): </label>
                 <input type="text"  name="tenkh" id="tenkh"> <br>
-                <label for="sdt">Số điện thoại: </label>
+                <label for="sdt">Số điện thoại(*): </label>
                 <input type="number"  name="sdt" id="sdt"> <br>
-                <label for="dc">Nơi nhận: </label>
+                <label for="dc">Nơi nhận(*): </label>
                 <input type="text"  name="dc" id="dc"> <br>
-                <label for="email">Email(*): </label>
+                <label for="email">Email: </label>
                 <input type="text"  name="email" > <br>
-                <label for="ghichu">Ghi chú(*): </label><br>
+                <label for="ghichu">Ghi chú: </label><br>
                 <textarea id="ghichu" style="margin: 0px;resize: none;height: 110px;width:100%;" value="" name="ghichu"></textarea> 
                 <input type="hidden" id="tongtienthanhtoan"  name="tongtien" value="<?php echo $total; ?>"> <br>
-                <span>(*): Không bắt buộc</span>
+                <span>(*): Bắt buộc</span>
                 <h5>Tổng tiền bạn phải thanh toán: <span id="tttt"><?php echo number_format($total, 0, ",", "."); ?> ₫</span></h5>
                 <button type="submit" name="thanh-toan">Xác nhận thanh toán</button>
             </div>

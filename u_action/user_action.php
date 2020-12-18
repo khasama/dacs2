@@ -2,9 +2,10 @@
     session_start();
     require_once "../admin/dbcon/ConDB.php";
     if(isset($_POST["regis"])){
-        if($_POST["eml"] !==  "" && $_POST["tdndk"] !==  "" && $_POST["pwdk"] !==  "" && $_POST["rpwdk"] !==  ""){
+        if($_POST["eml"] !==  "" && $_POST["sdt"] !==  "" && $_POST["tdndk"] !==  "" && $_POST["pwdk"] !==  "" && $_POST["rpwdk"] !==  ""){
             if($_POST["pwdk"] === $_POST["rpwdk"]){
                 $eml = $_POST["eml"];
+                $sdt = $_POST["sdt"];
                 $tdn = $_POST["tdndk"];
                 $pw = $_POST["pwdk"];
                 $hpw = password_hash($pw, PASSWORD_DEFAULT);
@@ -34,13 +35,14 @@
                     echo '<script> window.history.back(); </script>';
                 }else if($counteml === 0 && $counttk === 0){
                     $sql = "
-                        INSERT INTO tb_user (idUser, Email, TaiKhoan, MatKhau, Avatar, idLoaiTK) 
-                        VALUES (NULL, :eml, :tdn, :pw, 'uk.jpg', '2');
+                        INSERT INTO tb_user (idUser, Email, TaiKhoan, MatKhau, Avatar, idLoaiTK, HoTen, DiaChi, SDT) 
+                        VALUES (NULL, :eml, :tdn, :pw, 'uk.jpg', '2', '', '', :sdt);
                     ";
                     $pre = $conn->prepare($sql);
                     $pre->bindParam(":eml", $eml, PDO::PARAM_STR);
                     $pre->bindParam(":tdn", $tdn, PDO::PARAM_STR);
                     $pre->bindParam(":pw", $hpw, PDO::PARAM_STR);
+                    $pre->bindParam(":sdt", $sdt, PDO::PARAM_STR);
                     $pre->execute();
                     echo '<script>alert("Đăng ký thành công !!!!");</script>';
                     header("Location: ../");

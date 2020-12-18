@@ -57,6 +57,14 @@
                         <i class="fa fa-exclamation-circle fa-2x tcheck  cerro" aria-hidden="true"></i>
                         <p class="tb"></p>
                     </div>
+
+                    <div class="control ">
+                        <label for="sdt">Số điện thoại:</label>
+                        <input type="text" class="form-control" id="sdt" name="sdt" placeholder="Nhập sô điện thoại...">
+                        <i class="fa fa-check-circle fa-2x tcheck csucc" aria-hidden="true"></i>
+                        <i class="fa fa-exclamation-circle fa-2x tcheck  cerro" aria-hidden="true"></i>
+                        <p class="tb"></p>
+                    </div>
                     
                     <div id="mk" class="control ">
                         <label for="pwdk">Mật Khẩu:</label>
