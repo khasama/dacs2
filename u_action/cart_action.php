@@ -100,6 +100,21 @@
         $tongtien = $_POST["tongtien"];
         $idUser =  (isset($_SESSION["idUser"])) ? $_SESSION["idUser"] : 1;
         if($tenkh !== "" && $sdt !== "" && $dc !== ""){
+            if($idUser !== 1){
+                $sql = "
+                    UPDATE tb_user
+                    SET HoTen = :hoten,
+                        DiaChi = :dc,
+                        SDT = :sdt
+                    WHERE idUser = :idUser
+                ";
+                $pre = $conn->prepare($sql);
+                $pre->bindParam(":hoten", $tenkh, PDO::PARAM_STR);
+                $pre->bindParam(":sdt", $sdt, PDO::PARAM_STR);
+                $pre->bindParam(":dc", $dc, PDO::PARAM_STR);
+                $pre->bindParam(":idUser", $idUser, PDO::PARAM_INT);
+                $pre->execute();
+            }
             $sql = "
                 INSERT INTO tb_donhang (idDH, TenKH, SDT, NoiNhan, GhiChu, TongTien, ThoiGian, idUser, idTTDH) 
                 VALUES (NULL, :tenkh, :sdt, :dc, :ghichu, :tongtien, CURRENT_TIME(), :idUser, '1');
@@ -112,7 +127,7 @@
             $pre->bindParam(":tongtien", $tongtien, PDO::PARAM_INT);
             $pre->bindParam(":idUser", $idUser, PDO::PARAM_INT);
             $pre->execute();
-            $idDH = $conn->lastInsertId();;
+            $idDH = $conn->lastInsertId();
             $ctdh = "";
             
             $cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];

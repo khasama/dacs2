@@ -309,7 +309,7 @@
             return $pre->fetchAll();
         }
     #
-    #rating func
+    # rating func
         // lấy số đánh giá của 1 sao
         function get_start($rating, $idSP){
             require "ConDB.php";
@@ -349,7 +349,7 @@
         }
     #
 
-    #tìm loại fun
+    # tìm loại fun
         // lấy sản phẩm bán chạy có idLoai 
         function selling($idLoai, $start){
             require "ConDB.php";
@@ -430,7 +430,7 @@
             return $pre->fetchAll();
         }
     #
-    #tìm loại sản phẩm fun
+    # tìm loại sản phẩm fun
         // lấy sản phẩm bán chạy có idLoaiSP
         function selling_loaisp($idLoaiSP, $start){
             require "ConDB.php";
@@ -513,6 +513,33 @@
             ";
             $pre = $conn->prepare($sql);
             $pre->bindParam(":idLoaiSP", $idLoaiSP, PDO::PARAM_INT);
+            $pre->execute();
+            return $pre->fetchAll();
+        }
+    #
+    # Người dùng func
+        // lấy thông tin người dùng
+        function info_user($idUser){
+            require "ConDB.php";
+            $sql = "
+                SELECT * FROM tb_user
+                WHERE idUser = :idUser
+            ";
+            $pre = $conn->prepare($sql);
+            $pre->bindParam(":idUser", $idUser, PDO::PARAM_INT);
+            $pre->execute();
+            return $pre->fetchAll();
+        }
+
+        // lấy đơn hàng của 1 người dùng
+        function order_user($idUser){
+            require "ConDB.php";
+            $sql = "
+                SELECT * FROM tb_donhang
+                WHERE idUser = :idUser
+            ";
+            $pre = $conn->prepare($sql);
+            $pre->bindParam(":idUser", $idUser, PDO::PARAM_INT);
             $pre->execute();
             return $pre->fetchAll();
         }

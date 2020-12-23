@@ -7,11 +7,83 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="public/css/header.css">
-    <link rel="stylesheet" href="public/css/footer.css">
+    <link rel="stylesheet" href="public/css/main.css">
     <title>Document</title>
     <style>
+        .content #info-user{
+            margin: 7px auto;
+            padding: 7px ;
+            border: 1px solid #aaaaaa;
+            box-shadow: 0px 0px 18px 0px grey;
+        }
+        .content #info-user #ava-user-action #anh-user img{
+            width: 100%;
+            overflow: hidden;
+            border-radius: 100%;
+        }
+        .content #info-user #tt-user{
+            border: 1px solid #000;
+            height: auto;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .content #info-user #tt-user .u-a{
+            border: 1px solid #000;
+            padding: 11px;
+            text-align: center;
+        }
+        .content #info-user #tt-user .u-a h4{
+            font-size: 1.5rem;
+            font-weight: 350;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .content #info-user #tt-user .u-a label{
+            margin-bottom: 20px;
+        }
+        .content #info-user #tt-user .u-a input{
+            outline: none;
+        }
+        .content #info-user #tt-user .u-a button{
+            outline: none;
+            padding: 5px 10px;
+            border: none;
+            box-shadow: 3px 2px 8px 1px #4b4747;
+        }
+
+        .content #history{
+            margin: 7px auto;
+            padding: 7px ;
+            border: 1px solid #aaaaaa;
+            box-shadow: 0px 0px 18px 0px grey;
+        }
+        .content #history h4{
+            font-size: 1.75rem;
+            font-weight: 350;
+            margin: 10px 0 30px 0;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .content #history table, thead, tbody{
+            border: 1px solid #000;
+        }
+        .content #history table{
+            width: 100%;
+        }
         
+        .content #history table tr{
+            text-align: center;
+        }
+        .content #history table tr th, td{
+            padding: 5px 10px;
+        }
+        .ttdh {
+            padding: 50px 15px 15px 15px;
+            width: 70%;
+            margin: 0 auto;
+            position: relative;
+            background-color: #fff;
+        }
         
     </style>
     <link rel="stylesheet" href="public/css/rps.css">
@@ -120,149 +192,125 @@
 
         <!-- content -->
         <div class="content">
-            <div class="frame" id="gio-hang">
-                <h3 id="tt-gh">Giỏ hàng của bạn</h3>
-                <form action="" method="post">
-                    <table>
-                        <tr>
-                            <th class="ten-sp">Sản phẩm</th>
-                            <th >Đơn giá</th>
-                            <th class="sl-sp">Số lượng</th>
-                            <th >Thành tiền</th>
-                            <th><i class="fa fa-cog" aria-hidden="true"></i></th>
-                        </tr>
-                        <tbody>
-                            <tr>
-                                <td class="ten-sp">
-                                    <img src="public/img/product/a1.png" alt="" width="100px" style="float: left;margin-right: 7px;">
-                                    ÁO KHOÁC NAM NỈ NGOẠI LÓT LÔNG GIỮ NHIỆT BAO ĐẸP SIÊU ẤM MÙA ĐÔNG
-                                </td>
-                                <td class="gia-sp">
-                                    166.666.000 ₫
-                                </td>
-                                <td class="sl-sp">
-                                    <input type="number" value="2">
-                                </td>
-                                <td class="thanh-tien">
-                                    166.666.000 ₫
-                                </td>
-                                <td class="dlt-sp">
-                                    <a href="">Xóa</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ten-sp">
-                                    <img src="public/img/product/a1.png" alt="" width="100px" style="float: left;margin-right: 7px;">
-                                    ÁO KHOÁC NAM NỈ NGOẠI LÓT LÔNG GIỮ NHIỆT BAO ĐẸP SIÊU ẤM MÙA ĐÔNG
-                                </td>
-                                <td class="gia-sp">
-                                    166.666.000 ₫
-                                </td>
-                                <td class="sl-sp">
-                                    <input type="number" value="2">
-                                </td>
-                                <td class="thanh-tien">
-                                    166.666.000 ₫
-                                </td>
-                                <td class="dlt-sp">
-                                    <a href="">Xóa</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="ten-sp">
-                                    <img src="public/img/product/a1.png" alt="" width="100px" style="float: left;margin-right: 7px;">
-                                    ÁO KHOÁC NAM NỈ NGOẠI LÓT LÔNG GIỮ NHIỆT BAO ĐẸP SIÊU ẤM MÙA ĐÔNG
-                                </td>
-                                <td class="gia-sp">
-                                    166.666.000 ₫
-                                </td>
-                                <td class="sl-sp">
-                                    <input type="number" value="2">
-                                </td>
-                                <td class="thanh-tien">
-                                    166.666.000 ₫
-                                </td>
-                                <td class="dlt-sp">
-                                    <a href="">Xóa</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button type="submit" id="update-sp">Cập nhật giỏ hàng</button>
-                </form>
 
-                <div id="pay">
-                    <div id="ma-giam-gia">
-                        <label for="mgg">Mã giảm giá: </label>
-                        <input type="text" name="mgg" placeholder="Nhập mã(nếu có)">
-                        <a href="javascript:void(0)">Kiểm tra</a>
-                    </div>
-                    <div id="thanh-toan">
-                        <h4>Tổng tiền: 999.999</h4>
-                        <a href="javascript:void(0)" onclick="document.getElementById('id01').style.display='block'">Xác nhận</a>
-                    </div>
-                </div>
-                <div id="id01" class="modal">
-                    <form class="modal-content animate" action="/action_page.php" method="post">
-                        <div class="form-thanh-toan">
-                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                            <h4>Thông tin thanh toán</h4>
-                            <label for="uname">Tên Khách Hàng: </label>
-                            <input type="text" placeholder="Enter Username" name="uname" > <br>
-                            <label for="uname">Tên Khách Hàng: </label>
-                            <input type="text" placeholder="Enter Username" name="uname" > <br>
-                            <label for="uname">Tên Khách Hàng: </label>
-                            <input type="text" placeholder="Enter Username" name="uname" > <br>
-                            <label for="uname">Tên Khách Hàng: </label>
-                            <input type="text" placeholder="Enter Username" name="uname" > <br>
-                            <label for="uname">Tên Khách Hàng: </label>
-                            <input type="text" placeholder="Enter Username" name="uname" > <br>
-                            <label for="uname">Tên Khách Hàng: </label>
-                            <input type="text" placeholder="Enter Username" name="uname" > <br>
-                            <h5>Tổng tiền bạn phải thanh toán: 999.999</h5>
-                            <button type="submit" name="dat-hang">Xác nhận thanh toán</button>
+            <div class="frame" id="info-user">
+                <div class="row">
+                    <div id="ava-user-action" class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <div id="anh-user">
+                            <img src="public/img/user/mywaifu.jpg" alt="">
                         </div>
-                        
-                    </form>
+                        <div id="change-img">
+                            <form action="#" method="post" class="u-a">
+                                <input type="file" name="avatar" id="avatar" style="width: 65%;">
+                                <button type="submit" style="margin-bottom: 15px;padding: 0px 20px;border:none;box-shadow: 3px 2px 8px 1px #4b4747;outline: none;">Thay đổi</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="tt-user" class="col-12 col-sm-12 col-md-8 col-lg-84 col-xl-8">
+                        <div id="i-u">
+                            <form action="#" method="post" class="u-a">
+                                <h4>Thông tin người dùng</h4>
+                                <label for="email">Email: </label>
+                                <input type="email" name="email" value="" style="width: 71%;"> <br>
+                                <label for="hvt">Họ tên: </label>
+                                <input type="text" name="hvt" value="" style="width: 70%;"> <br>
+                                <label for="phone">Số điện thoại: </label>
+                                <input type="text" name="phone" value="" style="width: 64%;"> <br>
+                                <label for="address">Địa chỉ: </label>
+                                <input type="text" name="address" value="" style="width: 70%;"> <br>
+                                <button type="submit" style="margin-right: 10px;">Lưu thay đổi</button>
+                                <button type="button">Lịch sử giao dịch</button>
+                            </form>
+                        </div>
+                        <div style="margin: 10px 0;"></div>
+                        <div id="change-pass">
+                            <form action="" class="u-a" method="post">
+                                <h4>Thay đổi mật khẩu</h4>
+                                <label for="oldpass">Mật khẩu cũ: </label>
+                                <input type="oldpass" value="" style="width: 66%;"> <br>
+                                <label for="newpass">Mật khẩu mới: </label>
+                                <input type="text" value="" style="width: 65%;"> <br>
+                                <label for="rnewpass">Nhập lại mật khẩu mới: </label>
+                                <input type="text" value="" style="width: 55%;"> <br>
+                                <button type="submit">Đổi mật khẩu</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
+
+            <div id="history" class="frame">
+                <h4>Lịch sử giao dịch</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Tên khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
+                            <th>Tổng tiền</th>
+                            <th>Thời gian</th>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>21</td>
+                            <td>Nguyễn Văn Văn AVăn</td>
+                            <td>099999999</td>
+                            <td>ABC xyz ABSDsdiidfdifdfdfsdfdsdsd</td>
+                            <td>999.999.999đ</td>
+                            <td>2020-12-13 18:30:45</td>
+                            <td><a href="javascript:void(0)" onclick="document.getElementById('detail').style.display='block'">Xem thông tin</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="detail" class="modal">
+                    <div class="modal-content animate">
+                        <div class="ttdh">
+                            <span onclick="document.getElementById('detail').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Kiểu</th>
+                                        <th>Đơn giá</th>
+                                        <th>Số lượng</th>
+                                        <th>Thành tiền</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="">Dây nịt nam thắt lưng nam chất liệu da bò</a></td>
+                                        <td>Không - đen</td>
+                                        <td>999.999đ</td>
+                                        <td>2</td>
+                                        <td>999.999đ</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="">Dây nịt nam thắt lưng nam chất liệu da bò</a></td>
+                                        <td>Không - đen</td>
+                                        <td>999.999đ</td>
+                                        <td>2</td>
+                                        <td>999.999đ</td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="">Dây nịt nam thắt lưng nam chất liệu da bò</a></td>
+                                        <td>Không - đen</td>
+                                        <td>999.999đ</td>
+                                        <td>2</td>
+                                        <td>999.999đ</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- end content -->
 
-        <!-- footer -->
-        <div class="footer">
-            <div class="frame" id="footer-item">
-                <div class="row">
-                    <div class="col-lg-4 col-xl-4" id="left-footer">
-                        <h5>Về Chúng Tôi</h5>
-                        <ul class="f-i">
-                            <li><a href="">abv</a></li>
-                            <li><a href="">xyz</a></li>
-                            <li><a href="">def</a></li>
-                            <li><a href="">qwer</a></li>
-
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 col-xl-4" id="footer-logo">
-                        <a href="">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Supreme_Logo.svg/800px-Supreme_Logo.svg.png" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-xl-4" id="right-footer">
-                        <h5>Về Chúng Tôi</h5>
-                        <ul class="f-i">
-                            <li><a href="">abv</a></li>
-                            <li><a href="">xyz</a></li>
-                            <li><a href="">def</a></li>
-                            <li><a href="">qwer</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end footer -->
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

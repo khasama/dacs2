@@ -54,6 +54,7 @@
                             require "pages/home.php"; break;
                         }
                     case "gio-hang" : require "pages/cart.php"; break;
+                    case "nguoi-dung" : require "pages/info.php"; break;
                         
                     
                     default : require "pages/home.php";
