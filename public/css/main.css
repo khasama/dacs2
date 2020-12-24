@@ -91,15 +91,35 @@
     .wrapper .header #bot-head #action #search #form{
         width: 100%;
     }
-    .wrapper .header #bot-head #action #search #cart{
+    .wrapper .header #bot-head #action #search #form{
+        width: 100%;
+    }
+    .wrapper .header #bot-head #action #search #suggestions{
+        position: absolute;
+        width: 96%;
+        top: 37px;
+        z-index: 999;
+    }
+    .wrapper .header #bot-head #action #search #suggestions #sugg-item{
+        background-color: #ececee;
+        padding: 10px 15px;
+        /* line-height: 42px; */
+        border-bottom: 1px solid;
+    }
+    .wrapper .header #bot-head #action #search #suggestions #sugg-item p{
+        margin: 0;
+        font-size: 1.2em;
+    }
+    .wrapper .header #bot-head #action  #cart{
         font-size: 25px;
         color: #fff;
         margin: 3px 7px 0 7px;
+        position: relative;
     }
-    .wrapper .header #bot-head #action #search #cart span{
+    .wrapper .header #bot-head #action  #cart span{
         position: absolute;
         top: 0;
-        right: 15px;
+        right: -32px;
         font-size: 12px;
     }
     .wrapper .header #bot-head #action #search, #form, #menu{
@@ -805,7 +825,7 @@
         text-transform: uppercase;
         text-align: center;
     }
-    .content #history table, thead, tbody{
+    .content #history table,.content #history table thead,.content #history table tbody{
         border: 1px solid #000;
     }
     .content #history table{

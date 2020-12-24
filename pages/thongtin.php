@@ -155,63 +155,13 @@
     </div>
 
     <div id="cmt">
-        <h4>Bình Luận</h4>
-        <div id="user-input">
-            <img src="public/img/user/mywaifu.jpg" alt="" id="u-i">
-            <div id="cmt-in">
-                <form action="./admin/action/comment_action.php" method="post">
-                    <textarea name="cmt" id="" placeholder="Nhập bình luận"></textarea>
-                    <input type="hidden" name="idUser" value="">
-                    <input type="hidden" name="idPhim" value="">
-                    <button type="submit" name="dang">Đăng</button>
-                </form>
-            </div>
-        </div>
-        <div id="list-cmt">
-            <div class="user-cmt">
-                <img src="public/img/user/mywaifu.jpg" alt="" srcset="">
-                <div class="content-cmt" style="width : 100%;">
-                    <h5>khaprovcl</h5> <span class="time">11:17 11-17-2020</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente mollitia quos aperiam dolorem dignissimos cumque. Dolorem quae sit, aliquid labore amet perspiciatis placeat? Omnis porro numquam molestiae cumque nesciunt? Excepturi.</p>
-                </div>
-            </div>
-            <div class="user-cmt">
-                <img src="public/img/user/mywaifu.jpg" alt="" srcset="">
-                <div class="content-cmt" style="width : 100%;">
-                    <h5>khaprovcl</h5> <span class="time">11:17 11-17-2020</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente mollitia quos aperiam dolorem dignissimos cumque. Dolorem quae sit, aliquid labore amet perspiciatis placeat? Omnis porro numquam molestiae cumque nesciunt? Excepturi.</p>
-                </div>
-            </div>
-            <div class="user-cmt">
-                <img src="public/img/user/mywaifu.jpg" alt="" srcset="">
-                <div class="content-cmt" style="width : 100%;">
-                    <h5>khaprovcl</h5> <span class="time">11:17 11-17-2020</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente mollitia quos aperiam dolorem dignissimos cumque. Dolorem quae sit, aliquid labore amet perspiciatis placeat? Omnis porro numquam molestiae cumque nesciunt? Excepturi.</p>
-                </div>
-            </div>
-            <div class="user-cmt">
-                <img src="public/img/user/mywaifu.jpg" alt="" srcset="">
-                <div class="content-cmt" style="width : 100%;">
-                    <h5>khaprovcl</h5> <span class="time">11:17 11-17-2020</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente mollitia quos aperiam dolorem dignissimos cumque. Dolorem quae sit, aliquid labore amet perspiciatis placeat? Omnis porro numquam molestiae cumque nesciunt? Excepturi.</p>
-                </div>
-            </div>
-            <div class="user-cmt">
-                <img src="public/img/user/mywaifu.jpg" alt="" srcset="">
-                <div class="content-cmt" style="width : 100%;">
-                    <h5>khaprovcl</h5> <span class="time">11:17 11-17-2020</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente mollitia quos aperiam dolorem dignissimos cumque. Dolorem quae sit, aliquid labore amet perspiciatis placeat? Omnis porro numquam molestiae cumque nesciunt? Excepturi.</p>
-                </div>
-            </div>
-            <div class="user-cmt">
-                <img src="public/img/user/mywaifu.jpg" alt="" srcset="">
-                <div class="content-cmt" style="width : 100%;">
-                    <h5>khaprovcl</h5> <span class="time">11:17 11-17-2020</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente mollitia quos aperiam dolorem dignissimos cumque. Dolorem quae sit, aliquid labore amet perspiciatis placeat? Omnis porro numquam molestiae cumque nesciunt? Excepturi.</p>
-                </div>
-            </div>
-
-        </div>
+        <?php
+            if(!isset($_SESSION["idUser"])){
+                echo "<a href='javascript:void(0)' onclick='document.getElementById('dang-nhap').style.display='block''>Đăng nhập</a> để bình luận";
+            }else{
+                require 'cmt.php';
+            }
+        ?>
     </div>
 </div>
 <!-- end rate -->

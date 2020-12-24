@@ -82,7 +82,7 @@
                 <label for="tenkh">Họ và tên khách hàng(*): </label>
                 <input type="text"  name="tenkh" id="tenkh"> <br>
                 <label for="sdt">Số điện thoại(*): </label>
-                <input type="number"  name="sdt" id="sdt"> <br>
+                <input type="number"  name="sdt" id="p"> <br>
                 <label for="dc">Nơi nhận(*): </label>
                 <input type="text"  name="dc" id="dc"> <br>
                 <label for="email">Email: </label>

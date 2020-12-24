@@ -58,10 +58,10 @@
             SELECT * FROM tb_mausanpham
             INNER JOIN tb_mau
             ON tb_mausanpham.idMau = tb_mau.idMau
-            WHERE tb_mausanpham.idSP = :idSP
+            WHERE tb_mausanpham.idMauSP = :idMauSP
         ";
         $pre = $conn->prepare($sql);
-        $pre->bindParam(":idSP", $idSP, PDO::PARAM_INT);
+        $pre->bindParam(":idMauSP", $idMau, PDO::PARAM_INT);
         $pre->execute();
         foreach($pre->fetchAll() as $row){
             $mau = $row["Mau"];

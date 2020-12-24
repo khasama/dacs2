@@ -37,7 +37,7 @@ function changeColor(ele){
 
 function checkThanhToan(){
     const tenkh = document.getElementById("tenkh").value;
-    const sdt = document.getElementById("sdt").value;
+    const sdt = document.getElementById("p").value;
     const dc = document.getElementById("dc").value;
     
     if(tenkh !== "" && sdt !== "" && dc !== ""){
@@ -82,6 +82,20 @@ function changeOption(ele){
     // const idLoai = ele.getAttribute("data-id");
     $(".option-item").attr("style","");
     $(ele).css({"color": "#0056b3", "text-decoration": "underline"});
+    // $.get("u_action/timloai_sort.php", {type:type, idLoai:idLoai}, function(data){
+    //     $("#loai-sort").html(data);
+    // });
+}
+
+function cmt(){
+    const cmt = document.getElementById("ndcmt");
+    if(cmt.value !== ""){
+        cmt.setAttribute("value", "");
+        return true;
+    }else{
+        alert("Vui lòng nhập nội dung !!!");
+        return false;
+    }
     // $.get("u_action/timloai_sort.php", {type:type, idLoai:idLoai}, function(data){
     //     $("#loai-sort").html(data);
     // });

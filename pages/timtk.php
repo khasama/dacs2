@@ -1,12 +1,6 @@
 <?php
-    $idLoaiSP = (int)$_GET["idLoaiSP"];
-    $tenloai = "";
-    $count = 0;
-    $selling = selling_loaisp_count($idLoaiSP);
-    foreach($selling as $s){
-        $tenloai = $s["LoaiSP"];
-        $count++;
-    }
+    $tk = $_GET["q"];
+    $count = all_find($tk);
     if(isset($_GET["trang"])){
         $currentPage = (int)$_GET["trang"];
     }else{
@@ -14,46 +8,14 @@
     }
     
     $start = ($currentPage - 1)*16;
-    if(isset($_GET["type"])){
-        switch($_GET["type"]){
-            case "selling" :
-                $product = selling_loaisp($idLoaiSP, $start);
-                $type = "selling";
-                break;
-            case "new" :
-                $product = newsp_loaisp($idLoaiSP, $start);
-                $type = "new";
-                break;
-            case "costgiam" :
-                $product = costgiam_loaisp($idLoaiSP, $start);
-                $type = "costgiam";
-                break;
-            case "costtang" :
-                $product = costtang_loaisp($idLoaiSP, $start);
-                $type = "costtang";
-                break;
-            default : $product = selling_loaisp($idLoaiSP, $start);$type = "selling";
-        }
-    }else{
-        $product = selling_loaisp($idLoaiSP, $start);
-        $type = "selling";
-    }
+    
 ?>
-<div id="result" class="frame">
-    <h4><?php echo $tenloai; ?>: <?php echo $count; ?> sản phẩm</h4>
-</div>
 <div id="result-product" class="frame">
-    <div id="option">
-        <a href="./?p=loai-san-pham&idLoaiSP=<?php echo $idLoaiSP; ?>&type=selling" <?php if($type==="selling"){echo"style='color:#0056b3;text-decoration:underline'";} ?> class="option-item">Bán chạy</a>
-        <a href="./?p=loai-san-pham&idLoaiSP=<?php echo $idLoaiSP; ?>&type=new" <?php if($type==="new"){echo"style='color:#0056b3;text-decoration:underline'";} ?> class="option-item" >Hàng mới</a>
-        <a href="./?p=loai-san-pham&idLoaiSP=<?php echo $idLoaiSP; ?>&type=costgiam" <?php if($type==="costgiam"){echo"style='color:#0056b3;text-decoration:underline'";} ?> class="option-item" >Giá <i class="fa fa-arrow-down" aria-hidden="true"></i></a>
-        <a href="./?p=loai-san-pham&idLoaiSP=<?php echo $idLoaiSP; ?>&type=costtang" <?php if($type==="costtang"){echo"style='color:#0056b3;text-decoration:underline'";} ?> class="option-item" >Giá <i class="fa fa-arrow-up" aria-hidden="true"></i></a>
-    </div>
     <div id="sort-loaisp">
         <div class="row-product">
             <?php
-                //$selling = selling($idLoaiSP);
-                foreach($product as $s):
+                $find = find_pro($tk, $start);
+                foreach($find as $s):
                     $pt = 100 - (($s["GiaGiam"]*100)/$s["GiaGoc"]);
                     $pt = round($pt, 0, PHP_ROUND_HALF_UP);
             ?>
@@ -105,13 +67,13 @@
             ?>
                 <a href="<?php
                     if($p === '<'){
-                        echo "./?p=loai-san-pham&idLoaiSP=".$idLoaiSP."&type=".$type."&trang=".($currentPage-1);
+                        echo "?p=tim-kiem&q=".$tk."&trang=".($currentPage-1);
                     }
                     else if($p === '>'){
-                        echo "./?p=loai-san-pham&idLoaiSP=".$idLoaiSP."&type=".$type."&trang=".($currentPage+1);
+                        echo "?p=tim-kiem&q=".$tk."&trang=".($currentPage+1);
                     }
                     else{
-                        echo "./?p=loai-san-pham&idLoaiSP=".$idLoaiSP."&type=".$type."&trang=".$p;
+                        echo "?p=tim-kiem&q=".$tk."&trang=".$p;
                     }
                 ?>" style="margin:0 5px;text-decoration: none;<?php if($p == $currentPage){echo "color:red;";} ?>">
                     <?php echo $p; ?>

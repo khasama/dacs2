@@ -19,13 +19,13 @@
             return $pre->fetchAll();
         }
 
-        // Lấy 16 sản phẩm mới nhất
+        // Lấy 8 sản phẩm mới nhất
         function new_product(){
             require "ConDB.php";
             $sql = "
                 SELECT * FROM tb_sanpham 
                 ORDER BY tb_sanpham.idSP DESC 
-                LIMIT 0,16
+                LIMIT 0,8
             ";
             $pre = $conn->prepare($sql);
             $pre->execute();
@@ -52,6 +52,37 @@
             $pre->bindParam(":idSP", $idSP, PDO::PARAM_INT);
             $pre->execute();
             return $pre->fetchAll();
+        }
+
+        // lấy sản phẩm có từ khóa
+        function find_pro($tk, $start){
+            require "ConDB.php";
+            $sql = "
+                SELECT * FROM tb_sanpham
+                INNER JOIN tb_loaisanpham
+                ON tb_sanpham.idLoaiSP = tb_loaisanpham.idLoaiSP
+                WHERE tb_sanpham.Ten REGEXP :tk OR tb_loaisanpham.LoaiSP REGEXP :tk
+                LIMIT :start, 16
+            ";
+            $pre = $conn->prepare($sql);
+            $pre->bindParam(":tk", $tk, PDO::PARAM_STR);
+            $pre->bindParam(":start", $start, PDO::PARAM_INT);
+            $pre->execute();
+            return $pre->fetchAll();
+        }
+        // lấy sản phẩm có từ khóa
+        function all_find($tk){
+            require "ConDB.php";
+            $sql = "
+                SELECT * FROM tb_sanpham
+                INNER JOIN tb_loaisanpham
+                ON tb_sanpham.idLoaiSP = tb_loaisanpham.idLoaiSP
+                WHERE tb_sanpham.Ten REGEXP :tk OR tb_loaisanpham.LoaiSP REGEXP :tk
+            ";
+            $pre = $conn->prepare($sql);
+            $pre->bindParam(":tk", $tk, PDO::PARAM_STR);
+            $pre->execute();
+            return $pre->rowCount();
         }
 
         
@@ -540,6 +571,23 @@
             ";
             $pre = $conn->prepare($sql);
             $pre->bindParam(":idUser", $idUser, PDO::PARAM_INT);
+            $pre->execute();
+            return $pre->fetchAll();
+        }
+    #
+    # Bình luận func
+        // lấy comment của 1 sản phẩm
+        function cmt_pro($idSP){
+            require "ConDB.php";
+            $sql = "
+                SELECT * FROM tb_comment
+                INNER JOIN tb_user
+                ON tb_comment.idUser = tb_user.idUser
+                WHERE tb_comment.idSP = :idSP
+                ORDER BY idCmt DESC
+            ";
+            $pre = $conn->prepare($sql);
+            $pre->bindParam(":idSP", $idSP, PDO::PARAM_INT);
             $pre->execute();
             return $pre->fetchAll();
         }

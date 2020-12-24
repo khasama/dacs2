@@ -30,7 +30,7 @@
     <div id="bot-head">
         <div class="frame" id="action">
             <div class="row">
-                <div id="menu" class="col-3 col-sm-8 col-md-8 col-lg-7 col-xl-7">
+                <div id="menu" class="col-3 col-sm-7 col-md-7 col-lg-6 col-xl-6">
                     <nav class="navbar navbar-expand-sm navbar-dark" style="height: 100%;padding: 0;">
                         <!-- Toggler/collapsibe Button -->
                         <button class="navbar-toggler" type="button" data-toggle="collapse" id="btn" data-target="#collapsibleNavbar" style="margin: 0 auto;">
@@ -98,14 +98,64 @@
                     </nav>
                 </div>
                 <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style="padding: 0;"></div>
-                <div id="search" class="col-8 col-sm-3 col-md-3 col-lg-4 col-xl-4">
+                <div id="search" class="col-7 col-sm-3 col-md-3 col-lg-4 col-xl-4">
                     <form action="" method="get" id="form">
                         <input type="hidden" name="p" value="tim-kiem">
                         <input type="text" name="q" id="tk" placeholder="Tìm kiếm:">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
+                    <div id="suggestions">
+                        <!-- <div id="sugg-item">
+                            <p>Sơ mi nam</p>
+                        </div>
+                        <div id="sugg-item">
+                            <p>Sơ mi nam</p>
+                        </div>
+                        <div id="sugg-item">
+                            <p>Sơ mi nam</p>
+                        </div> -->
+                    </div>
+                    <script>
+                        const search = document.getElementById("tk");
+                        const matchlist = document.getElementById("suggestions");
+
+                        const searchStates = async searchText => {
+                            const res = await fetch('http://localhost/dacs2/lsp.php');
+                            const states = await res.json();
+
+                            // 
+                            let matches = states.filter(state => {
+                                const regex = new RegExp(`^${searchText}`, 'gi');
+                                return state.lsp.match(regex);
+                            });
+
+                            //console.log(matches);
+
+                            if(searchText.length < 2){
+                                matches = [];
+                                matchlist.innerHTML = '';
+                            }
+                            outputHtml(matches);
+                        };
+
+                        const outputHtml = matches => {
+                            if(matches.length > 0){
+                                const html = matches.map(match => `
+                                <div id="sugg-item">
+                                    <p>${match.lsp}</p>
+                                </div>
+                                `).join('');
+                                matchlist.innerHTML = html;
+                            }
+                        };
+
+
+                        search.addEventListener('input', () => searchStates(search.value));
+                    </script>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style="text-align: left;padding: 0;">
                     <a href="./?p=gio-hang" id="cart">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <i class="fa fa-shopping-cart" aria-hidden="true" style="position: absolute;"></i>
                         <span class="badge badge-danger"><?php if(isset($_SESSION["cart"])){echo count($_SESSION["cart"]);}else{echo "0";} ?></span>
                     </a>
                 </div>

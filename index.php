@@ -53,6 +53,12 @@
                         }else{
                             require "pages/home.php"; break;
                         }
+                    case "tim-kiem" : 
+                        if( isset($_GET["q"]) ){
+                            require "pages/timtk.php"; break;
+                        }else{
+                            require "pages/home.php"; break;
+                        }
                     case "gio-hang" : require "pages/cart.php"; break;
                     case "nguoi-dung" : require "pages/info.php"; break;
                         
