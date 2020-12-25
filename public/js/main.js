@@ -88,9 +88,8 @@ function changeOption(ele){
 }
 
 function cmt(){
-    const cmt = document.getElementById("ndcmt");
-    if(cmt.value !== ""){
-        cmt.setAttribute("value", "");
+    const cmt = $('textarea#ndcmt').val()
+    if(cmt !== ""){
         return true;
     }else{
         alert("Vui lòng nhập nội dung !!!");
@@ -109,4 +108,12 @@ function cmt(){
 //         $("#loai-sort").html(data);
 //     });
 // }
+
+function viewDetail(ele){
+    const id= ele.getAttribute("data-id");
+    $.get("u_action/detailhis.php", {idDH:id}, function(data){
+        $("#detail").html(data);
+    });
+    document.getElementById('detail').style.display='block'
+}
 

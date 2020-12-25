@@ -549,6 +549,30 @@
         }
     #
     # Người dùng func
+
+        // lấy tất cả người dùng
+        function all_user(){
+            require "ConDB.php";
+            $sql = "
+                SELECT * FROM tb_user
+                INNER JOIN tb_loaitaikhoan
+                ON tb_user.idLoaiTK = tb_loaitaikhoan.idLoaiTK
+            ";
+            $pre = $conn->prepare($sql);
+            $pre->execute();
+            return $pre->fetchAll();
+        }
+        // lấy tất cả người dùng
+        function count_user(){
+            require "ConDB.php";
+            $sql = "
+                SELECT idUser FROM tb_user
+            ";
+            $pre = $conn->prepare($sql);
+            $pre->execute();
+            return $pre->rowCount();
+        }
+        
         // lấy thông tin người dùng
         function info_user($idUser){
             require "ConDB.php";
@@ -567,6 +591,8 @@
             require "ConDB.php";
             $sql = "
                 SELECT * FROM tb_donhang
+                INNER JOIN tb_trangthaidh
+                ON tb_donhang.idTTDH = tb_trangthaidh.idTTDH
                 WHERE idUser = :idUser
             ";
             $pre = $conn->prepare($sql);

@@ -10,7 +10,6 @@
     $pre = $conn->prepare($sql);
     $pre->bindParam(":idDH", $idDH, PDO::PARAM_INT);
     $pre->execute();
-    ;
 ?>
 
 <span onclick="document.getElementById('thongtin').style.display='none'" class="close" title="Close Modal">&times;</span>

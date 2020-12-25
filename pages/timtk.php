@@ -55,7 +55,7 @@
                 }
                 // Sau vòng lặp này bạn sẽ có một mảng có tối đa là 5 trang
                 if ($pagination[0] != $currentPage) { // Nếu trang ngoài cùng bên trái, mà không phải là current page, thì sẽ có nút Previous 
-                    array_unshift($pagination, '<;');
+                    array_unshift($pagination, '<');
                 }
 
                 if ($pagination[count($pagination) - 1] != $currentPage) { // Nếu trang ngoài cùng bên phải, mà không phải là current page, thì sẽ có nút Next 

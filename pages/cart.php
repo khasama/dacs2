@@ -80,13 +80,13 @@
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <h4>Thông tin thanh toán</h4>
                 <label for="tenkh">Họ và tên khách hàng(*): </label>
-                <input type="text"  name="tenkh" id="tenkh"> <br>
+                <input type="text"  name="tenkh" id="tenkh" value="<?php if(isset($_SESSION["idUser"])){echo $_SESSION["HoTen"];}else{echo "";} ?>"> <br>
                 <label for="sdt">Số điện thoại(*): </label>
-                <input type="number"  name="sdt" id="p"> <br>
+                <input type="number"  name="sdt" id="p" value="<?php if(isset($_SESSION["idUser"])){echo $_SESSION["SDT"];}else{echo "";} ?>"> <br>
                 <label for="dc">Nơi nhận(*): </label>
-                <input type="text"  name="dc" id="dc"> <br>
+                <input type="text"  name="dc" id="dc" value="<?php if(isset($_SESSION["idUser"])){echo $_SESSION["DiaChi"];}else{echo "";} ?>"> <br>
                 <label for="email">Email: </label>
-                <input type="text"  name="email" > <br>
+                <input type="text"  name="email" value="<?php if(isset($_SESSION["idUser"])){echo $_SESSION["Email"];}else{echo "";} ?>"> <br>
                 <label for="ghichu">Ghi chú: </label><br>
                 <textarea id="ghichu" style="margin: 0px;resize: none;height: 110px;width:100%;" value="" name="ghichu"></textarea> 
                 <input type="hidden" id="tongtienthanhtoan"  name="tongtien" value="<?php echo $total; ?>"> <br>

@@ -132,6 +132,9 @@
                         // điều hướng quản lý thương hiệu
                         case "show-brand" : require "pages/thuonghieu/show_brand.php"; break;
 
+                        // điều hướng quản lý người dùng
+                        case "show-user" : require "pages/user/show_user.php"; break;
+
                         default : require "pages/dashboard.php";
                     }
                 ?>

@@ -1,7 +1,7 @@
 <h4>Bình Luận</h4>
 
 <div id="user-input">
-    <img src="public/img/user/mywaifu.jpg" alt="" id="u-i">
+    <img src="public/img/user/<?php echo $_SESSION["img"]; ?>" alt="" id="u-i">
     <div id="cmt-in">
         <form action="u_action/user_action.php" method="post" onsubmit="return cmt()">
             <textarea name="cmt" id="ndcmt" placeholder="Nhập bình luận"></textarea>
