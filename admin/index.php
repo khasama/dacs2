@@ -135,6 +135,9 @@
                         // điều hướng quản lý người dùng
                         case "show-user" : require "pages/user/show_user.php"; break;
 
+                        // điều hướng quản lý loại và loại sản phẩm
+                        case "loai-san-pham" : require "pages/lsp/lsp.php"; break;
+
                         default : require "pages/dashboard.php";
                     }
                 ?>

@@ -24,6 +24,8 @@
             require "ConDB.php";
             $sql = "
                 SELECT * FROM tb_sanpham 
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 ORDER BY tb_sanpham.idSP DESC 
                 LIMIT 0,8
             ";
@@ -61,6 +63,8 @@
                 SELECT * FROM tb_sanpham
                 INNER JOIN tb_loaisanpham
                 ON tb_sanpham.idLoaiSP = tb_loaisanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_sanpham.Ten REGEXP :tk OR tb_loaisanpham.LoaiSP REGEXP :tk
                 LIMIT :start, 16
             ";
@@ -77,6 +81,8 @@
                 SELECT * FROM tb_sanpham
                 INNER JOIN tb_loaisanpham
                 ON tb_sanpham.idLoaiSP = tb_loaisanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_sanpham.Ten REGEXP :tk OR tb_loaisanpham.LoaiSP REGEXP :tk
             ";
             $pre = $conn->prepare($sql);
@@ -85,6 +91,20 @@
             return $pre->rowCount();
         }
 
+        // Lấy 8 sản phẩm bán được nhiều nhất
+        function sell_product(){
+            require "ConDB.php";
+            $sql = "
+                SELECT * FROM tb_sanpham 
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
+                ORDER BY tb_sanpham.DaBan DESC 
+                LIMIT 0,8
+            ";
+            $pre = $conn->prepare($sql);
+            $pre->execute();
+            return $pre->fetchAll();
+        }
         
     #
     
@@ -390,6 +410,8 @@
                 ON tb_loai.idLoai = tb_loaisanpham.idLoai
                 INNER JOIN tb_sanpham
                 ON tb_loaisanpham.idLoaiSP = tb_sanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_loai.idLoai = :idLoai
                 ORDER BY DaBan DESC
                 LIMIT :start, 16
@@ -410,6 +432,8 @@
                 ON tb_loai.idLoai = tb_loaisanpham.idLoai
                 INNER JOIN tb_sanpham
                 ON tb_loaisanpham.idLoaiSP = tb_sanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_loai.idLoai = :idLoai
                 ORDER BY idSP DESC
                 LIMIT :start, 16
@@ -430,6 +454,8 @@
                 ON tb_loai.idLoai = tb_loaisanpham.idLoai
                 INNER JOIN tb_sanpham
                 ON tb_loaisanpham.idLoaiSP = tb_sanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_loai.idLoai = :idLoai
                 ORDER BY GiaGiam DESC
                 LIMIT :start, 16
@@ -450,6 +476,8 @@
                 ON tb_loai.idLoai = tb_loaisanpham.idLoai
                 INNER JOIN tb_sanpham
                 ON tb_loaisanpham.idLoaiSP = tb_sanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_loai.idLoai = :idLoai
                 ORDER BY GiaGiam ASC
                 LIMIT :start, 16
@@ -469,6 +497,8 @@
                 SELECT * FROM tb_loaisanpham
                 INNER JOIN tb_sanpham
                 ON tb_loaisanpham.idLoaiSP = tb_sanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_loaisanpham.idLoaiSP = :idLoaiSP
                 ORDER BY DaBan DESC
                 LIMIT :start, 16
@@ -487,6 +517,8 @@
                 SELECT * FROM tb_loaisanpham
                 INNER JOIN tb_sanpham
                 ON tb_loaisanpham.idLoaiSP = tb_sanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_loaisanpham.idLoaiSP = :idLoaiSP
                 ORDER BY idSP DESC
                 LIMIT :start, 16
@@ -505,6 +537,8 @@
                 SELECT * FROM tb_loaisanpham
                 INNER JOIN tb_sanpham
                 ON tb_loaisanpham.idLoaiSP = tb_sanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_loaisanpham.idLoaiSP = :idLoaiSP
                 ORDER BY GiaGiam DESC
                 LIMIT :start, 16
@@ -523,6 +557,8 @@
                 SELECT * FROM tb_loaisanpham    
                 INNER JOIN tb_sanpham
                 ON tb_loaisanpham.idLoaiSP = tb_sanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_loaisanpham.idLoaiSP = :idLoaiSP
                 ORDER BY GiaGiam ASC
                 LIMIT :start, 16
@@ -540,6 +576,8 @@
                 SELECT * FROM tb_loaisanpham
                 INNER JOIN tb_sanpham
                 ON tb_loaisanpham.idLoaiSP = tb_sanpham.idLoaiSP
+                INNER JOIN tb_ttsanpham
+                ON tb_sanpham.idTTSP = tb_ttsanpham.idTTSP
                 WHERE tb_loaisanpham.idLoaiSP = :idLoaiSP
             ";
             $pre = $conn->prepare($sql);

@@ -39,7 +39,8 @@
                     <img src="public/img/product/<?php echo $n["Anh"]; ?>" alt="<?php echo $n["Ten"]; ?>" class="img-product"><br>
                     <span class="title-product"><?php echo $n["Ten"]; ?></span> <br>
                     <span class="gia"><?php echo number_format($n["GiaGiam"], 0, ",", "."); ?> ₫</span>
-                    <span class="phan-tram"><?php echo $pt; ?>%</span><br>
+                    <span class="phan-tram"><?php echo $pt; ?>%</span>
+                    <span style="float: right;font-size: 0.95em;color: red;"><?php echo $n["TinhTrang"]; ?></span><br>
                     <span class="gia-goc"><?php echo number_format($n["GiaGoc"], 0, ",", "."); ?> ₫</span>
                 </a>
             </div>
@@ -49,10 +50,10 @@
     </div>
 </div>
 <div id="hot" class="frame">
-<h3 class="product-type"><a href="">Sản phẩm bán chạy</a></h3>
+    <h3 class="product-type"><a href="">Sản phẩm bán chạy</a></h3>
     <div class="row-product">
         <?php
-            $new = new_product();
+            $new = sell_product();
             foreach($new as $n):
                 $pt = 100 - (($n["GiaGiam"]*100)/$n["GiaGoc"]);
                 $pt = round($pt, 0, PHP_ROUND_HALF_UP);
@@ -62,7 +63,8 @@
                     <img src="public/img/product/<?php echo $n["Anh"]; ?>" alt="<?php echo $n["Ten"]; ?>" class="img-product"><br>
                     <span class="title-product"><?php echo $n["Ten"]; ?></span> <br>
                     <span class="gia"><?php echo number_format($n["GiaGiam"], 0, ",", "."); ?> ₫</span>
-                    <span class="phan-tram"><?php echo $pt; ?>%</span><br>
+                    <span class="phan-tram"><?php echo $pt; ?>%</span>
+                    <span style="float: right;font-size: 0.95em;color: red;"><?php echo $n["TinhTrang"]; ?></span><br>
                     <span class="gia-goc"><?php echo number_format($n["GiaGoc"], 0, ",", "."); ?> ₫</span>
                 </a>
             </div>

@@ -33,6 +33,7 @@
                 <a class="collapse-item" href="./?p=show-slide">Slide</a>
                 <a class="collapse-item" href="./?p=show-brand">Thương hiệu</a>
                 <a class="collapse-item" href="./?p=show-user">Người dùng</a>
+                <a class="collapse-item" href="./?p=loai-san-pham">Loại và loại sản phẩm</a>
             </div>
         </div>
     </li>

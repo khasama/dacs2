@@ -62,7 +62,8 @@
                         <img src="public/img/product/<?php echo $s["Anh"]; ?>" alt="<?php echo $s["Ten"]; ?>" class="img-product"><br>
                         <span class="title-product"><?php echo $s["Ten"]; ?></span> <br>
                         <span class="gia"><?php echo number_format($s["GiaGiam"], 0, ",", "."); ?> ₫</span>
-                        <span class="phan-tram"><?php echo $pt; ?>%</span><br>
+                        <span class="phan-tram"><?php echo $pt; ?>%</span>
+                        <span style="float: right;font-size: 0.95em;color: red;"><?php echo $s["TinhTrang"]; ?></span><br>
                         <span class="gia-goc"><?php echo number_format($s["GiaGoc"], 0, ",", "."); ?> ₫</span>
                     </a>
                 </div>
